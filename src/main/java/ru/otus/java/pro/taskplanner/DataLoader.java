@@ -7,6 +7,9 @@ import ru.otus.java.pro.taskplanner.model.User;
 import ru.otus.java.pro.taskplanner.repository.TaskRepository;
 import ru.otus.java.pro.taskplanner.repository.UserRepository;
 
+/**
+ * Класс для наполнения синтетическими данными при старте приложения(просто для демонстрациии работы)
+ */
 @Component
 public class DataLoader implements CommandLineRunner {
 
@@ -20,6 +23,9 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        userRepository.deleteAll();
+        taskRepository.deleteAll();
+
         User user1 = new User();
         user1.setName("Иван Иванов");
         user1.setEmail("ivan@mail.ru");
